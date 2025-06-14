@@ -1,0 +1,61 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  Etudiant
+  Enseignant
+  Delegue
+}
+
+enum StatusPresence {
+  Present
+  Absent
+}
+
+model Personne {
+  id          String     @id @default(cuid())
+  nom         String
+  prenom      String
+  mdp         String
+  email       String     @unique
+  role        Role
+  do_presence Presence[] @relation("do_presence")
+}
+
+model Presence {
+  id          String         @id @default(cuid())
+  id_cours    String
+  id_etudiant String
+  is_valid    Boolean        @default(false)
+  status      StatusPresence
+  do_presence Personne       @relation("do_presence", fields: [id_etudiant], references: [id])
+  to_course   Cours          @relation("to_cours", fields: [id_cours], references: [id])
+}
+
+model Matiere {
+  id        String  @id @default(cuid())
+  titre     String  @unique
+  has_cours Cours[] @relation("has_matiere")
+}
+
+model Cours {
+  id          String     @id @default(cuid())
+  date_deb    DateTime
+  date_fin    DateTime
+  id_matiere  String
+  has_matiere Matiere    @relation("has_matiere", fields: [id_matiere], references: [id])
+  to_course   Presence[] @relation("to_cours")
+}
