@@ -1,0 +1,248 @@
+from enum import Enum
+
+
+class TypeDocument(Enum):
+    PHOTO = "PHOTO"
+    RELEVE_DE_NOTE = "RELEVE_DE_NOTE"
+    CIN_VERSO = "CIN_VERSO"
+    RESIDENCE = "RESIDENCE"
+    CIN_RECTO = "CIN_RECTO"
+    RECU_FACULTE = "RECU_FACULTE"
+    
+    @classmethod
+    def get_all(cls):
+        return [doc.value for doc in cls]
+
+class StatutInscription(Enum):
+    PENDING = "en attente"
+    VALID = "validé"
+    REJECTED = "rejetté"
+    
+    @classmethod
+    def get_all(cls):
+        return [statut.value for statut in cls]
+class Sexe(Enum):
+    F = "F"
+    M = "M"
+    O = "O"
+    
+    @classmethod
+    def get_all(cls):
+        return [sexe.value for sexe in cls]
+
+class Nationalite(Enum):
+    AFGHANISTAN = "Afghane"
+    AFRIQUE_DU_SUD = "Sud-Africaine"
+    ALBANIE = "Albanaise"
+    ALGERIE = "Algérienne"
+    ALLEMAGNE = "Allemande"
+    ANDORRE = "Andorrane"
+    ANGOLA = "Angolaise"
+    ARABIE_SAOUDITE = "Saoudienne"
+    ARGENTINE = "Argentine"
+    ARMENIE = "Arménienne"
+    AUSTRALIE = "Australienne"
+    AUTRICHE = "Autrichienne"
+    AZERBAIDJAN = "Azerbaïdjanaise"
+    
+    BAHAMAS = "Bahamienne"
+    BANGLADESH = "Bangladaise"
+    BELGIQUE = "Belge"
+    BELIZE = "Belizienne"
+    BENIN = "Béninoise"
+    BHOUTAN = "Bhoutanaise"
+    BIELORUSSIE = "Biélorusse"
+    BIRMANIE = "Birmane"
+    BOLIVIE = "Bolivienne"
+    BOSNIE = "Bosnienne"
+    BOTSWANA = "Botswanaise"
+    BRESIL = "Brésilienne"
+    BRUNEI = "Brunéienne"
+    BULGARIE = "Bulgare"
+    BURKINA_FASO = "Burkinabè"
+    BURUNDI = "Burundaise"
+
+    CAMBODGE = "Cambodgienne"
+    CAMEROUN = "Camerounaise"
+    CANADA = "Canadienne"
+    CAP_VERT = "Cap-verdienne"
+    CHILI = "Chilienne"
+    CHINE = "Chinoise"
+    CHYPRE = "Chypriote"
+    COLOMBIE = "Colombienne"
+    COMORES = "Comorienne"
+    CONGO = "Congolaise"
+    COREE_DU_SUD = "Sud-Coréenne"
+    COREE_DU_NORD = "Nord-Coréenne"
+    COSTA_RICA = "Costaricienne"
+    COTE_D_IVOIRE = "Ivoirienne"
+    CROATIE = "Croate"
+    CUBA = "Cubaine"
+
+    DANEMARK = "Danoise"
+    DJIBOUTI = "Djiboutienne"
+    DOMINIQUE = "Dominiquaise"
+    EGYPTE = "Égyptienne"
+    EMIRATS_ARABES_UNIS = "Émiratie"
+    EQUATEUR = "Équatorienne"
+    ERYTHREE = "Érythréenne"
+    ESPAGNE = "Espagnole"
+    ESTONIE = "Estonienne"
+    ESWATINI = "Swazie"
+    ETATS_UNIS = "Américaine"
+    ETHIOPIE = "Éthiopienne"
+
+    FINLANDE = "Finlandaise"
+    FRANCE = "Française"
+
+    GABON = "Gabonaise"
+    GAMBIE = "Gambienne"
+    GEORGIE = "Géorgienne"
+    GHANA = "Ghanéenne"
+    GRECE = "Grecque"
+    GRENADE = "Grenadienne"
+    GUATEMALA = "Guatémaltèque"
+    GUINEE = "Guinéenne"
+    GUINEE_BISSAU = "Bissau-Guinéenne"
+    GUINEE_EQUATORIALE = "Équato-guinéenne"
+    GUYANA = "Guyanienne"
+
+    HAITI = "Haïtienne"
+    HONDURAS = "Hondurienne"
+    HONGRIE = "Hongroise"
+
+    INDE = "Indienne"
+    INDONESIE = "Indonésienne"
+    IRAN = "Iranienne"
+    IRAK = "Irakienne"
+    IRLANDE = "Irlandaise"
+    ISLANDE = "Islandaise"
+    ISRAEL = "Israélienne"
+    ITALIE = "Italienne"
+
+    JAMAIQUE = "Jamaïcaine"
+    JAPON = "Japonaise"
+    JORDANIE = "Jordanienne"
+
+    KAZAKHSTAN = "Kazakhstanaise"
+    KENYA = "Kényane"
+    KIRGHIZISTAN = "Kirghize"
+    KIRIBATI = "Kiribatienne"
+    KOSOVO = "Kosovare"
+    KOWEIT = "Koweïtienne"
+
+    LAOS = "Laotienne"
+    LESOTHO = "Lesothane"
+    LETTONIE = "Lettonne"
+    LIBAN = "Libanaise"
+    LIBERIA = "Libérienne"
+    LIBYE = "Libyenne"
+    LIECHTENSTEIN = "Liechtensteinoise"
+    LITUANIE = "Lituanienne"
+    LUXEMBOURG = "Luxembourgeoise"
+
+    MACEDOINE = "Macédonienne"
+    MADAGASCAR = "Malgache"
+    MALAISIE = "Malaisienne"
+    MALAWI = "Malawienne"
+    MALDIVES = "Maldivienne"
+    MALI = "Malienne"
+    MALTE = "Maltaise"
+    MAROC = "Marocaine"
+    MARSHALL = "Marshallienne"
+    MAURICE = "Mauricienne"
+    MAURITANIE = "Mauritanienne"
+    MEXIQUE = "Mexicaine"
+    MICRONESIE = "Micronésienne"
+    MOLDAVIE = "Moldave"
+    MONACO = "Monégasque"
+    MONGOLIE = "Mongole"
+    MONTENEGRO = "Monténégrine"
+    MOZAMBIQUE = "Mozambicaine"
+    MYANMAR = "Birmane"
+
+    NAMIBIE = "Namibienne"
+    NAURU = "Nauruane"
+    NEPAL = "Népalaise"
+    NICARAGUA = "Nicaraguayenne"
+    NIGER = "Nigérienne"
+    NIGERIA = "Nigériane"
+    NORVEGE = "Norvégienne"
+    NOUVELLE_ZELANDE = "Néo-Zélandaise"
+
+    OMAN = "Omanaise"
+    OUGANDA = "Ougandaise"
+
+    PAKISTAN = "Pakistanaise"
+    PALAOS = "Palaosienne"
+    PALESTINE = "Palestinienne"
+    PANAMA = "Panaméenne"
+    PAPOUASIE = "Papouane"
+    PARAGUAY = "Paraguayenne"
+    PAYS_BAS = "Néerlandaise"
+    PEROU = "Péruvienne"
+    PHILIPPINES = "Philippine"
+    POLOGNE = "Polonaise"
+    PORTUGAL = "Portugaise"
+
+    QATAR = "Qatarienne"
+
+    REPUBLIQUE_CENTRAFRICAINE = "Centrafricaine"
+    REPUBLIQUE_DOMINICAINE = "Dominicaine"
+    REPUBLIQUE_TCHEQUE = "Tchèque"
+    ROUMANIE = "Roumaine"
+    ROYAUME_UNI = "Britannique"
+    RUSSIE = "Russe"
+    RWANDA = "Rwandaise"
+
+    SAINT_KITTS = "Kittsienne"
+    SAINT_MARIN = "Saint-Marinaise"
+    SAINT_VINCENT = "Vincentaise"
+    SALVADOR = "Salvadorienne"
+    SAMOA = "Samoane"
+    SENEGAL = "Sénégalaise"
+    SERBIE = "Serbe"
+    SEYCHELLES = "Seychelloise"
+    SIERRA_LEONE = "Sierra-Léonaise"
+    SINGAPOUR = "Singapourienne"
+    SLOVAQUIE = "Slovaque"
+    SLOVENIE = "Slovène"
+    SOMALIE = "Somalienne"
+    SOUDAN = "Soudanaise"
+    SRI_LANKA = "Srilankaise"
+    SUEDE = "Suédoise"
+    SUISSE = "Suisse"
+    SURINAME = "Surinamaise"
+    SYRIE = "Syrienne"
+
+    TADJIKISTAN = "Tadjike"
+    TAIWAN = "Taïwanaise"
+    TANZANIE = "Tanzanienne"
+    TCHAD = "Tchadienne"
+    THAILANDE = "Thaïlandaise"
+    TIMOR_ORIENTAL = "Est-Timoraise"
+    TOGO = "Togolaise"
+    TONGA = "Tongienne"
+    TRINITE_ET_TOBAGO = "Trinidadienne"
+    TUNISIE = "Tunisienne"
+    TURKMENISTAN = "Turkmène"
+    TURQUIE = "Turque"
+
+    UKRAINE = "Ukrainienne"
+    URUGUAY = "Uruguayenne"
+    OUZBEKISTAN = "Ouzbèke"
+
+    VANUATU = "Vanuatuane"
+    VATICAN = "Vaticane"
+    VENEZUELA = "Vénézuélienne"
+    VIETNAM = "Vietnamienne"
+
+    YEMEN = "Yéménite"
+
+    ZAMBIE = "Zambienne"
+    ZIMBABWE = "Zimbabwéenne"
+
+    @classmethod
+    def get_all(cls):
+        return [{'name':nationalite.name, 'value':nationalite.value} for nationalite in cls]
+
