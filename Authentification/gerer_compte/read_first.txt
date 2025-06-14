@@ -1,0 +1,13 @@
+gérer compte comporte plusieurs use case :
+->consulter_compte(s)
+->modifier_compte
+->supprimer_compte
+
+>description textuelle dans le fichier .pdf
+
+>les diagrammes de séquence sont séparer dans fichier .png
+
+>diagramme de classe (les classes utiliser ici sont dans le diagramme de classe dans le dossier précédent)
+
+>le diagramme de cas d'utilisation (les cas d'utilisation ici sont dans le diagramme de cas d'utilisation général dans le dossier précédent)
+
