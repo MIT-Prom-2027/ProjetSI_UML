@@ -52,4 +52,4 @@ Contient tous les diagrammes UML (cas d'utilisation, classes, activités, séque
 - **Backend** : Serveur développé en Flask (Python), avec un README pour la configuration et le lancement.
 
 ### 3. Aperçu Application
-Captures d'écran des interfaces principales (étudiant et admin), permettant de visualiser les fonctionnalités de base développées conformément à la conception UML.
+Captures videos des interfaces principales (étudiant et admin), permettant de visualiser les fonctionnalités de base développées conformément à la conception UML.
